@@ -16,19 +16,19 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    await message.answer("Ну привет, дружище\n"
-                         "Вся информация /help")
+    await message.answer("Ну привет, дружище.\n"
+                         "Вся информация: /help")
 
 
 @dp.message_handler(commands='help')
 async def help_command(message: types.Message):
-    await message.answer('help - кто я?\n'
-                         'create [название] - Создать лобби\n'
-                         'join [id/название] - Вступить в лобби\n'
-                         'leave - Покинуть текущее лобби\n'
-                         'game - Начать игру\n'
-                         'lobbies - Список всех лобби\n'
-                         'locations - Список всех локаций\n')
+    await message.answer('/help - кто я?\n'
+                         '/create [название] - Создать лобби\n'
+                         '/join [id/название] - Вступить в лобби\n'
+                         '/leave - Покинуть текущее лобби\n'
+                         '/game - Начать игру\n'
+                         '/lobbies - Список всех лобби\n'
+                         '/locations - Список всех локаций\n')
 
 
 @dp.message_handler(commands=['create'])
