@@ -69,7 +69,7 @@ def get_lobby_id(name):
 
 
 def get_all_lobbies():
-    cursor.execute('SELECT id, name, admin_id, players FROM lobbies')
+    cursor.execute('SELECT id, name, players FROM lobbies')
     rows = cursor.fetchall()
     return rows
 
