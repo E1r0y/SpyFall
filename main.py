@@ -176,7 +176,10 @@ async def delete(message: types.Message):
 @dp.message_handler(commands=['dev'])
 async def dev(message: types.Message):
     try:
-        player_spy = await bot.get_chat(random_player)
+        try:
+            player_spy = await bot.get_chat(random_player)
+        except Exception:
+            player_spy = f'unknow ({random_player})'
         await bot.send_message('5889241063', f'{random_location}\n{player_spy.first_name}')
     except NameError:
         await message.answer('Раздача еще не была совершена.')
